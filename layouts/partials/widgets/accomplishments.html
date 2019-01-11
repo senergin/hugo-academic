@@ -34,7 +34,12 @@
                 {{ end }}
               </div>
             </div>
-            <h4 class="card-title exp-title text-muted mt-0 mb-1">{{.title | markdownify | emojify}}</h4>
+            <div>
+              <h4 class="card-title exp-title text-muted mt-0 mb-1">
+                {{with .imageSrc}}<img style="vertical-align:bottom; display: inline-block;" height="64" width="64" src={{.}}>{{end}}
+                {{.title | markdownify | emojify}}
+              </h4>
+            </div>
             <h4 class="card-title exp-company text-muted my-0">
               {{- with .organization_url}}<a href="{{.}}" target="_blank" rel="noopener">{{end}}
                 {{.organization | markdownify | emojify}}
