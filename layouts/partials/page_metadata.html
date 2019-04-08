@@ -19,6 +19,8 @@
   </span>
   {{ end }}
 
+  <meta name="keywords" content="{{ range $index, $element := .Keywords }}{{ if gt $index 0 }},{{ end }}{{ . }}{{ else }}{{ .Site.Params.defaultKeywords }}{{ end }}">
+
   <span class="article-date">
     {{ if ne $.Params.Lastmod $.Params.Date }}
         {{ i18n "last_updated" }}
